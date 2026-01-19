@@ -1,114 +1,110 @@
-/* ===== Variables de color ===== */
-:root {
-    --rosa: #e88bb5;
-    --rosa-oscuro: #c96a96;
-    --gris-claro: #f4f4f6;
-    --gris: #9a9a9a;
-    --gris-oscuro: #444;
-    --aprobado: #d8a1bd;
-    --bloqueado: #e0e0e0;
+/* ------------------------
+   PALETA DE COLORES
+   Verde principal: #1b5e20
+   Verde claro: #4caf50
+   Dorado: #c9a227
+   Fondo: #f5f7f5
+------------------------- */
+
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
 }
 
-/* ===== Estilos generales ===== */
 body {
     margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: var(--gris-claro);
-    color: var(--gris-oscuro);
+    background-color: #f5f7f5;
+    color: #1b1b1b;
 }
 
 header {
     text-align: center;
-    padding: 1.5rem;
+    padding: 20px;
+    background-color: #1b5e20;
+    color: white;
 }
 
-h1 {
-    margin-bottom: 0.3rem;
-    color: var(--rosa-oscuro);
+header h1 {
+    margin-bottom: 5px;
 }
 
-/* ===== Malla ===== */
-#malla {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 1rem;
-    padding: 1rem;
+main {
+    display: flex;
+    gap: 16px;
+    padding: 20px;
+    overflow-x: auto;
 }
 
-/* ===== Columnas ===== */
+/* Columna por semestre */
 .semestre {
-    background: white;
-    border-radius: 12px;
-    padding: 1rem;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    min-width: 260px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
 
 .semestre h2 {
     text-align: center;
-    color: var(--rosa-oscuro);
-    font-size: 1.1rem;
-    margin-bottom: 0.8rem;
+    color: #1b5e20;
+    border-bottom: 2px solid #c9a227;
+    padding-bottom: 5px;
 }
 
-/* ===== Ramos ===== */
+/* Ramo */
 .ramo {
-    background: var(--gris-claro);
-    border-radius: 8px;
-    padding: 0.6rem;
-    margin-bottom: 0.5rem;
+    background-color: #e8f5e9;
+    border-left: 5px solid #4caf50;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 6px;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
 }
 
 .ramo:hover {
-    background: #f0d7e3;
+    background-color: #dcedc8;
 }
 
+/* Aprobado */
 .ramo.aprobado {
-    background: var(--aprobado);
-    text-decoration: line-through;
+    background-color: #c9a227;
     color: white;
+    text-decoration: line-through;
+    border-left-color: #8d6e00;
 }
 
+/* Bloqueado visual */
 .ramo.bloqueado {
-    background: var(--bloqueado);
-    color: var(--gris);
-    cursor: not-allowed;
+    opacity: 0.6;
 }
 
-/* ===== Modal ===== */
-.modal {
+/* Mensaje */
+.mensaje {
     position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.45);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #1b5e20;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    z-index: 100;
 }
 
-.modal.hidden {
+.oculto {
     display: none;
 }
 
-.modal-content {
-    background: white;
-    padding: 1.5rem;
-    border-radius: 12px;
-    max-width: 320px;
-    text-align: center;
-}
+/* Responsive */
+@media (max-width: 768px) {
+    main {
+        padding: 10px;
+    }
 
-.modal-content h3 {
-    color: var(--rosa-oscuro);
-}
-
-.modal-content button {
-    margin-top: 1rem;
-    background: var(--rosa);
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
-    color: white;
-    cursor: pointer;
+    .semestre {
+        min-width: 220px;
+    }
 }
 
