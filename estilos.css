@@ -1,1 +1,114 @@
+/* ===== Variables de color ===== */
+:root {
+    --rosa: #e88bb5;
+    --rosa-oscuro: #c96a96;
+    --gris-claro: #f4f4f6;
+    --gris: #9a9a9a;
+    --gris-oscuro: #444;
+    --aprobado: #d8a1bd;
+    --bloqueado: #e0e0e0;
+}
+
+/* ===== Estilos generales ===== */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: var(--gris-claro);
+    color: var(--gris-oscuro);
+}
+
+header {
+    text-align: center;
+    padding: 1.5rem;
+}
+
+h1 {
+    margin-bottom: 0.3rem;
+    color: var(--rosa-oscuro);
+}
+
+/* ===== Malla ===== */
+#malla {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+}
+
+/* ===== Columnas ===== */
+.semestre {
+    background: white;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.semestre h2 {
+    text-align: center;
+    color: var(--rosa-oscuro);
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+}
+
+/* ===== Ramos ===== */
+.ramo {
+    background: var(--gris-claro);
+    border-radius: 8px;
+    padding: 0.6rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.ramo:hover {
+    background: #f0d7e3;
+}
+
+.ramo.aprobado {
+    background: var(--aprobado);
+    text-decoration: line-through;
+    color: white;
+}
+
+.ramo.bloqueado {
+    background: var(--bloqueado);
+    color: var(--gris);
+    cursor: not-allowed;
+}
+
+/* ===== Modal ===== */
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    max-width: 320px;
+    text-align: center;
+}
+
+.modal-content h3 {
+    color: var(--rosa-oscuro);
+}
+
+.modal-content button {
+    margin-top: 1rem;
+    background: var(--rosa);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+}
 
